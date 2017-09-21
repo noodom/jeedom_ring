@@ -1,0 +1,7 @@
+[panel,primary]
+.Est-ce que le plugin s'appuie sur des API cloud ?
+--
+Oui et non, le plugin est en connexion directe avec la gateway The Keys pour les actions de verrouillage et déverrouillage
+
+Pour récupérer les serrures et la gestion des partages, c'est l'API Cloud qui est utilisée
+--
