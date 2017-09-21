@@ -40,7 +40,7 @@ $eqLogics = eqLogic::byType('ring');
       </div>
     </div>
 
-    <legend><i class="fa fa-table"></i>  {{Mes Keys}}</legend>
+    <legend><i class="fa fa-table"></i>  {{Mes Ring}}</legend>
     <div class="eqLogicThumbnailContainer">
       <?php
       foreach ($eqLogics as $eqLogic) {
@@ -111,54 +111,6 @@ $eqLogics = eqLogic::byType('ring');
               <div class="col-sm-8">
                 <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
                 <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
-              </div>
-            </div>
-
-            <div class="form-group" style="display:none">
-              <label class="col-sm-3 control-label">{{Type}}</label>
-              <div class="col-sm-3">
-                <span class="eqLogicAttr" data-l1key="configuration" data-l2key="type"></span>
-              </div>
-            </div>
-
-            <div id="locker" style="display:none">
-              <div class="form-group">
-                <label class="col-sm-3 control-label">{{ID Serrure}}</label>
-                <div class="col-sm-3">
-                  <span class="eqLogicAttr" data-l1key="configuration" data-l2key="id_serrure"></span>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">{{Nom Clef}}</label>
-                <div class="col-sm-3">
-                  <span class="eqLogicAttr" data-l1key="configuration" data-l2key="nom"></span>
-                </div>
-              </div>
-            </div>
-
-            <div id="others" style="display:none">
-              <div class="form-group">
-                <label class="col-sm-3 control-label">{{Type d'équipement}}</label>
-                <div class="col-sm-3">
-                  <select id="typeList" class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="typeSelect">
-                    <option value="gateway">Gateway réseau</option>
-                    <option value="button">Bouton clef</option>
-                    <option value="phone">Téléphone</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group" id="id">
-                <label class="col-sm-3 control-label">{{ID ou Téléphone}}</label>
-                <div class="col-sm-3">
-                  <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="idfield" type="text" placeholder="{{tél : +33...}}">
-                </div>
-              </div>
-              <div class="form-group" id="gateway" style="display:none">
-                <label class="col-sm-3 control-label">{{IP de la passerelle}}</label>
-                <div class="col-sm-3">
-                  <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="ipfield" type="text" placeholder="{{voir la doc}}">
-                </div>
               </div>
             </div>
 
