@@ -14,27 +14,6 @@
 * You should have received a copy of the GNU General Public License
 * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
 */
-$('#typeList').change(function(){
-  var text = $("#typeList").val();
-  if (text == 'gateway') {
-    $('#gateway').show();
-  } else {
-    $('#gateway').hide();
-  }
-});
-
-function printEqLogic(_eqLogic){
-  if (_eqLogic.configuration.type == 'locker') {
-    $('#locker').show();
-    $('#others').hide();
-} else if (_eqLogic.configuration.type == 'digicode') {
-  $('#locker').hide();
-  $('#others').hide();
-} else {
-    $('#locker').hide();
-    $('#others').show();
-  }
-}
 
 function addCmdToTable(_cmd) {
   if (!isset(_cmd)) {

@@ -1,29 +1,7 @@
 ==== Configuration du plugin
 
-Il faut saisir votre compte The Keys dans la page de configuration du plugin.
-
-Votre nom d'utilisateur est le numéro de téléphone commencant par +33 sans le 0. Et le mot de passe de l'app.
+Il faut saisir votre compte Ring.com sur la page de configuration
 
 ==== Configuration des équipements
 
-Il y a 5 types d'équipements disponible, tous ne fonctionnent pas pareil dans Jeedom
-
-- serrure : les serrures sont créées automatiquement par la configuration générale du plugin
-  les infos de statut et batterie sont disponible
-  deux actions verrouillage et déverouillage sont créées pour chaque gateway ajouter
-
-- gateway : la gateway est un équipement ajouté manuellement dans le plugin avec son IP et son ID (se référer pour ce dernier à l'étiquete The Keys)
-  une information de présence online est disponible, ainsi qu'une action refresh qui rescanne les serrures alentour
-
-- bouton : les boutons d'accès BLE doivent être ajoutés manuellement avec leur ID
-  pour chaque serrure, le bouton aura une information de statut du partage permettant d'actionner la serrure, et les deux actions d'activation et désactivation du partage
-
-- téléphone : le plugin permet d'ajouter un autre utilisateur à qui on sohaite partager des serrures, l'ajout est manuel avec le numéro de téléphone (commencant par +33)
-  même fonctionnement que les boutons
-
-- digicode : les équipements digicode sont créés automatiquement, un équipement est créé par partage de l'app (donc un meme digicode peut etre présent plusieurs fois sur une meme serrure si il y a des codes différents)
-  ensuite le fonctionnement est identique aux boutons
-
-Important : plugin fonctionnement pour les gateway, bouton, téléphone à condition qu'il n'y ait qu'un partage permanent avec chaque. Il faut laisser le plugin le gérer
-
-Pour le digicode, il faut créer les partages permanents directement depuis l'app en choisissant le code dans ce cas particulier
+Les équipements sont créés automatiquement à partir du compte Ring.com

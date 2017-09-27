@@ -1,15 +1,3 @@
-==== The Keys, serrure connectée
+==== Ring, vidéophone connecté
 
-Ce plugin permet d'interconnecter Jeedom avec vos serrures The Key.
-
-The Keys propose :
-
-- serrures (le plugin les récupère de votre compte)
-
-- boutons BLE (le plugin permet de gérer l'accès avec les serrures)
-
-- gateway réseau (le plugin permet de l'utiliser pour les actions directes sur les serrures)
-
-- digicode (le plugin permet de gérer le statut des accès avec les serrures)
-
-- application mobile (le plugin permet de gérer le partage des serrures avec les téléphones)
+Ce plugin permet d'interconnecter Jeedom avec vos équipements Ring.com
