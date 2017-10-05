@@ -71,7 +71,7 @@ class ring extends eqLogic {
                     }
 
                     if ($state['is_motion']) {
-                        log::add('ring', 'debug', 'Motion : ' . var_dump($state));
+                            log::add('ring', 'debug', 'Motion : ' . var_dump($state));
                     }
                 }
             }
