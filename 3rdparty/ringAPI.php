@@ -54,7 +54,7 @@ class RingAPI {
         curl_close ($ch);
 
         // Try JSON Decode
-        $json = json_decode($serverResponse, true);
+        $json = json_decode($serverResponse);
 
         // If decoding fails, return original string
         if (gettype($json) == 'NULL') {

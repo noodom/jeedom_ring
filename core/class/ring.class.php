@@ -61,6 +61,7 @@ class ring extends eqLogic {
         log::add('ring', 'debug', 'Connecting : ' . $username . ' ' . $password);
         $bell->authenticate($username, $password);
         log::add('ring', 'debug', 'Devices : ' . print_r($bell->devices(), true));
+        ring::createStuff($bell->devices());
         while(1) {
             $states = $bell->poll();
             if ($states) {
@@ -77,6 +78,24 @@ class ring extends eqLogic {
             sleep(5);
         }
     }
+
+    public static function createStuff($_stuff) {
+      foreach ($_stuff->doorbots as $device) {
+        log::add('ring', 'debug', 'Stuff : ' . $device->id);
+        $ring = self::byLogicalId($device->id, 'ring');
+        if (!is_object($ring)) {
+          $ring = new ring();
+          $ring->setEqType_name('ring');
+          $ring->setLogicalId($device->id);
+          $ring->setName('Flower - '. $device->description);
+          $ring->setConfiguration('description',$device->description);
+          $ring->setConfiguration('battery_life',$device->battery_life);
+          $ring->setConfiguration('device_id',$device->device_id);
+          $ring->setConfiguration('firmware_version',$device->firmware_version);
+          $ring->setConfiguration('kind',$device->kind);
+          $ring->save();
+        }
+      }
 
 }
 
