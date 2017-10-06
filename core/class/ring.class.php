@@ -60,7 +60,6 @@ class ring extends eqLogic {
         $bell = new RingAPI();
         log::add('ring', 'debug', 'Connecting : ' . $username . ' ' . $password);
         $bell->authenticate($username, $password);
-        print "My devices:\n";
         log::add('ring', 'debug', 'Devices : ' . print_r($bell->devices()));
         while(1) {
             $states = $bell->poll();
