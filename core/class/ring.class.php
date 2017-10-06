@@ -60,17 +60,17 @@ class ring extends eqLogic {
         $bell = new RingAPI();
         log::add('ring', 'debug', 'Connecting : ' . $username . ' ' . $password);
         $bell->authenticate($username, $password);
-        log::add('ring', 'debug', 'Devices : ' . print_r($bell->devices()));
+        log::add('ring', 'debug', 'Devices : ' . print_r($bell->devices()), true);
         while(1) {
             $states = $bell->poll();
             if ($states) {
                 foreach($states as $state) {
                     if ($state['is_ding']) {
-                        log::add('ring', 'debug', 'Ring : ' . print_r($state));
+                        log::add('ring', 'debug', 'Ring : ' . print_r($state), true);
                     }
 
                     if ($state['is_motion']) {
-                            log::add('ring', 'debug', 'Motion : ' . print_r($state));
+                            log::add('ring', 'debug', 'Motion : ' . print_r($state), true);
                     }
                 }
             }
