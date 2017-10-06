@@ -67,7 +67,7 @@ $eqLogics = eqLogic::byType('ring');
         <form class="form-horizontal">
           <fieldset>
             <div class="form-group">
-              <label class="col-sm-3 control-label">{{Nom du Visiophone}}</label>
+              <label class="col-sm-3 control-label">{{Nom du Ring}}</label>
               <div class="col-sm-3">
                 <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
                 <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement ring}}"/>
@@ -104,6 +104,27 @@ $eqLogics = eqLogic::byType('ring');
               <div class="col-sm-8">
                 <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
                 <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">{{Description du Ring}}</label>
+              <div class="col-sm-8">
+                <span class="eqLogicAttr" data-l1key="configuration" data-l2key="description"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">{{Type du Ring}}</label>
+              <div class="col-sm-8">
+                <span class="eqLogicAttr" data-l1key="configuration" data-l2key="kind"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">{{Firmware}}</label>
+              <div class="col-sm-8">
+                <span class="eqLogicAttr" data-l1key="configuration" data-l2key="firmware_version"></span>
               </div>
             </div>
 
