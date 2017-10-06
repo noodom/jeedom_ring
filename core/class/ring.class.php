@@ -96,6 +96,7 @@ class ring extends eqLogic {
           $ring->save();
         }
       }
+    }
 
 }
 
