@@ -5,3 +5,11 @@ Il faut saisir votre compte Ring.com sur la page de configuration
 ==== Configuration des équipements
 
 Les équipements sont créés automatiquement à partir du compte Ring.com
+
+Seuls les portiers sont créés et utilisés dans Jeedom, ils possèdent 3 commandes infos :
+
+  - Mouvement : qui remonte les évènements de mouvement (les mêmes ques les notifs de l'application)
+
+  - Sonnerie : quand quelqu'un sonne (pareil, les mêmes que l'appli)
+
+  - Batterie : qui donne le statut de la batterie (celui ci est aussi remonter pour la page batterie)
