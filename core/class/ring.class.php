@@ -61,10 +61,10 @@ class ring extends eqLogic {
     log::add('ring', 'debug', 'Connecting : ' . $username . ' ' . $password);
     $bell->authenticate($username, $password);
     log::add('ring', 'debug', 'Devices : ' . print_r($bell->devices(), true));
-    foreach ($bell->devices->doorbots as $device) {
+    foreach ($bell->devices()->doorbots as $device) {
       ring::createStuff($device);
     }
-    foreach ($bell->devices->authorized_doorbots as $device) {
+    foreach ($bell->devices()->authorized_doorbots as $device) {
       ring::createStuff($device);
     }
     while(1) {
