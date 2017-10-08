@@ -31,7 +31,7 @@ class RingAPI {
         }
 
         $url = $this->_apiProto.$this->_apiHost.$call.$urlParameters;
-        print "Call: ".$url."\n";
+        //print "Call: ".$url."\n";
         curl_setopt($ch, CURLOPT_URL, $url);
 
         if (isset($username) || isset($password)) {
