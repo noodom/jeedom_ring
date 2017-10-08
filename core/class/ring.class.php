@@ -61,7 +61,12 @@ class ring extends eqLogic {
     log::add('ring', 'debug', 'Connecting : ' . $username . ' ' . $password);
     $bell->authenticate($username, $password);
     log::add('ring', 'debug', 'Devices : ' . print_r($bell->devices(), true));
-    ring::createStuff($bell->devices());
+    foreach ($bell->devices->doorbots as $device) {
+      ring::createStuff($device);
+    }
+    foreach ($bell->devices->authorized_doorbots as $device) {
+      ring::createStuff($device);
+    }
     while(1) {
       $states = $bell->poll();
       if ($states) {
@@ -83,7 +88,6 @@ class ring extends eqLogic {
   }
 
   public static function createStuff($_stuff) {
-    foreach ($_stuff->doorbots as $device) {
       log::add('ring', 'debug', 'Stuff : ' . $device->id);
       $ring = self::byLogicalId($device->id, 'ring');
       if (!is_object($ring)) {
@@ -148,8 +152,6 @@ class ring extends eqLogic {
       }
       $ring->checkAndUpdateCmd('battery',$device->battery_life);
     }
-  }
-
 }
 
 class ringCmd extends cmd {
