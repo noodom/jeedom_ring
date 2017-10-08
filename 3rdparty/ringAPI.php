@@ -83,8 +83,8 @@ class RingAPI {
 
         $response = $this->_httpCall('POST', $this->_urlSession, $postData, $username, $password);
 
-        //print "Authenticated as ".$response->profile->first_name.' '.$response->profile->last_name."\n";
-        //print "Authentication token is ".$response->profile->authentication_token."\n";
+        print "Authenticated as ".$response->profile->first_name.' '.$response->profile->last_name."\n";
+        print "Authentication token is ".$response->profile->authentication_token."\n";
         $this->_authToken = $response->profile->authentication_token;
     }
 
