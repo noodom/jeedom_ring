@@ -88,21 +88,21 @@ class ring extends eqLogic {
   }
 
   public static function createStuff($_stuff) {
-      log::add('ring', 'debug', 'Stuff : ' . $device->id);
-      $ring = self::byLogicalId($device->id, 'ring');
+      log::add('ring', 'debug', 'Stuff : ' . $_stuff->id);
+      $ring = self::byLogicalId($_stuff->id, 'ring');
       if (!is_object($ring)) {
         $ring = new ring();
         $ring->setEqType_name('ring');
-        $ring->setLogicalId($device->id);
-        $ring->setName('Ring - '. $device->description);
+        $ring->setLogicalId($_stuff->id);
+        $ring->setName('Ring - '. $_stuff->description);
         $ring->save();
       }
-      $ring->batteryStatus($device->battery_life);
-      $ring->setConfiguration('description',$device->description);
-      $ring->setConfiguration('battery_life',$device->battery_life);
-      $ring->setConfiguration('device_id',$device->device_id);
-      $ring->setConfiguration('firmware_version',$device->firmware_version);
-      $ring->setConfiguration('kind',$device->kind);
+      $ring->batteryStatus($_stuff->battery_life);
+      $ring->setConfiguration('description',$_stuff->description);
+      $ring->setConfiguration('battery_life',$_stuff->battery_life);
+      $ring->setConfiguration('device_id',$_stuff->device_id);
+      $ring->setConfiguration('firmware_version',$_stuff->firmware_version);
+      $ring->setConfiguration('kind',$_stuff->kind);
       $ring->save();
       $cmdlogic = ringCmd::byEqLogicIdAndLogicalId($ring->getId(),'ring');
       if (!is_object($cmdlogic)) {
@@ -150,7 +150,7 @@ class ring extends eqLogic {
         $cmdlogic->setIsVisible('0');
         $cmdlogic->save();
       }
-      $ring->checkAndUpdateCmd('battery',$device->battery_life);
+      $ring->checkAndUpdateCmd('battery',$_stuff->battery_life);
     }
 }
 
